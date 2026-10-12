@@ -1,44 +1,14 @@
 import subprocess
 import os
 
-subprocess.run("cls" if os.name == "nt" else "clear", shell=True)
-
-
-# the tkinter Label Widget
-# - used to display text or images inside a Tkinter window. It is commonly used to show titles, captions or information in GUI applications.
-
-# ---------------------------------------------------------------------------
-# Syntax:
-
-# Label(master, options)
-
-# Parameters:
-#   - master: The parent window or widget in which the frame is placed.
-#   - options: A set of configuration options written as key-value pairs.
-
-# ---------------------------------------------------------------------------
-
-# Tkinter Label Options
-# ---------------------
-#   - text: The text displayed on the label.
-#   - image: Displays an image on the label.
-#   - bg: Sets the background color.
-#   - fg: Sets the text color.
-#   - font: Specifies the font style and size.
-#   - width: Sets the width of the label.
-#   - height: Sets the height of the label.
-#   - padx: Adds horizontal padding.
-#   - pady: Adds vertical padding.
-#   - relief: Sets the border style (FLAT, RAISED, SUNKEN, etc.).
-# ---------------------------------------------------------------------------
-
-# Example:
-# ---------------------------------
 import tkinter as tk
 from tkinter import *
 
-root = Tk()
+subprocess.run("cls" if os.name == "nt" else "clear", shell=True)
+
+
 # defines a name for the current window, in this case, 'root'
+root = Tk()
 
 # configure the window
 # ---------------------------------
@@ -48,10 +18,17 @@ root.config(bg="#12130F")
 # set the background color for the WINDOW
 # ---------------------------------
 
-# Configure the LABEL
+
+# Configure a LABEL
 # ---------------------------------
 label = Label(
-    root, text="Python World", font=("Arial", 25, "bold"), fg="red", bg="white"
+    root,
+    text="Python World",
+    font=("Arial", 25, "bold"),
+    fg="yellow",
+    bg="teal",
+    relief="raised",
+    bd=10,
 )
 # root : tells it to place the label in the window defined as root
 #       *** See NEXT ***
@@ -60,6 +37,8 @@ label = Label(
 # font : sets the font options for the label
 # fg : sets the text color for the LABEL text, (not the window)
 # bg : sets the background color for the LABEL text, (not the window)
+# relief : sets the border style
+# bd : sets a border width
 # ---------------------------------
 
 # *** NEXT *** instead of setting the text for the label within the tk,Label definition, you can set it as a separate line of code, such as:

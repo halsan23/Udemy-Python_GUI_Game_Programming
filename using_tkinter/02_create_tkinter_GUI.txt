@@ -1,0 +1,52 @@
+Create First Tkinter GUI Application
+
+ref : https://www.geeksforgeeks.org/python/python-gui-tkinter/
+
+There are two main methods used which user needs to remember while creating the Python application with GUI. These methods are:
+
+
+1. Tk()
+_ In Tkinter, the Tk() class is used to create the main application window. Every Tkinter program starts by creating exactly one Tk() object.
+
+    root = Tk(screenName=None, baseName=None, className='Tk', useTk=1)
+
+
+Parameters:
+
+- screenName (optional): Specifies the display (mainly used on Unix systems with multiple screens).
+- baseName (optional): Sets the base name for the application (default is the script name).
+- className (optional): Defines the name of the window class (used for styling and window manager settings).
+- useTk (optional): A boolean that tells whether to initialize the Tk subsystem (usually left as default 1).
+
+
+if you have widgets:
+    label.pack() places the widget inside the window.
+
+
+2. mainloop()
+    The mainloop() method starts the event loop of a Tkinter application. It keeps the window open, waits for user actions (like mouse clicks or key presses), and processes events until the window is closed. Below is the syntax:
+
+        root.mainloop()
+
+------------------------------------------------------------------------------------------------------
+
+Example: This example creates a basic Tkinter window and starts the event loop.
+
+
+    import tkinter as tk
+    root = tk.Tk()  # gives the current GUI Window a name - usually named after the window's purpose
+
+    # Widgets are added here
+
+
+
+    root.mainloop()
+
+Explanation:
+
+    - tk.Tk(): Creates the main application window.
+    - root.mainloop(): Starts the event loop and keeps the window responsive.
+
+The program stops only when the window is closed.
+
+------------------------------------------------------------------------------------------------------
