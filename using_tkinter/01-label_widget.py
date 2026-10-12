@@ -51,7 +51,7 @@ root.config(bg="#12130F")
 # Configure the LABEL
 # ---------------------------------
 label = Label(
-    root, text="Python World", font=("Arial", 25, "bold"), fg="white", bg="#3f4b2c"
+    root, text="Python World", font=("Arial", 25, "bold"), fg="red", bg="white"
 )
 # root : tells it to place the label in the window defined as root
 #       *** See NEXT ***
