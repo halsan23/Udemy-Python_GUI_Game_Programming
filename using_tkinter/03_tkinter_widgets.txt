@@ -21,9 +21,14 @@ Example: This example creates a simple window and displays the text GeeksForGeek
     import tkinter as tk
 
     root = tk.Tk()
+
     label = tk.Label(root, text="GeeksForGeeks.org!")
 
-    label.pack() : # places the label inside the window.
+    use
+        label.pack() : # places the label inside the window.
+    or,
+        label.place(x=150, y=200)
+            ***Use instead of label.pack() to place the label at a specified x, y coordinate.
 
     root.mainloop()
 
@@ -223,7 +228,6 @@ Example: This example creates a menu bar with File and Help menus.
     helpmenu.add_command(label="About")
 
     root.mainloop()
-Output
 
 Explanation:
 
@@ -456,6 +460,7 @@ Explanation:
 The Text widget is used to display or edit multi-line text. Unlike Entry, it supports multiple lines and text formatting.
 
     text = Text(master, option=value)
+    wraplength = 150 : (OPTIONAL) : sets a max length for the text which will overflow to the next line.
 
 
 Example: This example creates a multi-line text box and inserts default text into it.
@@ -465,15 +470,16 @@ Example: This example creates a multi-line text box and inserts default text int
     - root = Tk()
     - root.title("Text Widget Example")
 
-    - text_widget = Text(root, height=2, width=30)
+    - text_widget = Text(root, height=2, width=30, wraplength = 150)
     - text_widget.pack()
 
     - text_widget.insert(END, "GeeksforGeeks\nBEST WEBSITE\n")
-    -root.mainloop()
+    - root.mainloop()
 
 Explanation:
 
     - Text(): Creates a multi-line text widget.
+    - wraplength = 150 : (pixels) (OPTIONAL) : sets a max length for the text which will overflow to the next line.
     - insert(): Inserts text at a specified position.
     - END: Appends text at the end.
 

@@ -1,0 +1,106 @@
+How To Add An Image In Tkinter?
+https://www.geeksforgeeks.org/python/how-to-add-an-image-in-tkinter/
+
+
+Python Tkinter supports various image formats such as PNG, JPEG, GIF, and BMP. Images are handled in Tkinter using the PhotoImage and BitmapImage classes and the -Pillow Library-. The PhotoImage class is more commonly used due to its support for color images, whereas BitmapImage is limited to monochrome bitmaps.
+
+Adding images in Tkinter can be done by using various Tkinter Widgets, such as Label, Buttons, and Canvas.
+
+------------------------------------------------------------------------------------------------------
+
+Steps to add Image in Tkinter
+Let us see step by step how we can add images in a Tkinter application window using Tkinter widgets.
+
+Import Modules and Classes
+- The first step is to import the Tkinter module and various other classes as per your requirements such as PhotoImage or BitmapImage.
+
+    import tkinter
+    from tkinter import PhotoImage
+
+--------------------------------------------------
+
+Create Tkinter Window
+Next step is to create a basic Tkinter window where all the widgets as well as the image will be displayed.
+
+    parent = tk.Tk()
+    parent.title("Application Title")
+
+--------------------------------------------------
+
+Load the Image
+- Now, load the image to be displayed in the Tkinter window. We can load the image using PhotoImage or Python Pillow Library. Each have a quite similar method to load the image. We can see it in detail in below examples.
+
+    image = PhotoImage(file="gfg.png")
+
+--------------------------------------------------
+
+
+Adding Image to Label
+- To display the image in Tkinter window, we will add the image to the Label widget. It takes two parameter, one is the root window on which we want the widget to display and the other is the image object in which we loaded the image in the previous step.
+
+    image_label = tkinter.Label(root, image)
+    image_label.pack()
+
+The last step to to execute our code and see the image displayed in the Tkinter window.
+
+    parent.mainloop()
+
+--------------------------------------------------
+
+
+Adding Image in Tkinter
+Let us see each method, one by one in detail to add the image in Tkinter window using Tkinter Label widget.
+
+--------------------------------------------------
+
+
+Using PhotoImage
+- The PhotoImage class of Tkinter is commonly used to create and manipulate images. We can load the image in Tkinter by passing the path of the image file to the file parameter of the PhotoImage() class.
+
+    import tkinter as tk
+    from tkinter import PhotoImage
+
+    # Create the main window
+    parent = tk.Tk()
+    parent.title("Image in Tkinter")
+
+    # Load the image
+    image = PhotoImage(file="gfg.png")
+
+    # Create a label to display the image
+    image_label = tk.Label(parent, image=image)
+    image_label.pack()
+
+    # Start the Tkinter event loop
+    parent.mainloop()
+
+--------------------------------------------------
+
+Adding Image to Button
+- We can also add Images in Tkinter using the Button Widget. Like previous method, instead of adding image to the label, here we will add image to the button widget. We can do this by using the Button() class of the Tkinter module, which will take the root window and the image obeject as the parameter.
+
+
+    import tkinter as tk
+    from tkinter import PhotoImage
+
+    # Initialize the main application window
+    parent = tk.Tk()
+    parent.title("Image in Button Example")
+
+    # Load the image
+    image = PhotoImage(file="gfg.png")
+
+    # Create the Button widget and set the image
+    button = tk.Button(parent, image=image)
+    button.pack(pady=20)
+
+    # Keep a reference to the image
+    # to prevent garbage collection
+    button.image = image
+
+    # Run the application
+    parent.mainloop()
+
+--------------------------------------------------
+
+Integrating images into Tkinter applications enhances their visual appeal and user experience. Whether using the PhotoImage class, or Canvas widget, you have multiple options to incorporate images seamlessly into your Tkinter projects. Experiment with different methods and explore additional functionalities to create dynamic and engaging graphical interfaces.
