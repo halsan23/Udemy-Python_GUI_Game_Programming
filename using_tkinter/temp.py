@@ -5,21 +5,12 @@ from tkinter import *
 
 subprocess.run("cls" if os.name == "nt" else "clear", shell=True)
 
+# Examples
+root = tk.Tk()
+root.title("Python Tkinter")
 
-# Initialize the main application window
-parent = tk.Tk()
-parent.title("Image in Button Example")
+# widget(options)
 
-# Load the image
-image = PhotoImage(file="images/temp.gif")
+# widget.pack(options)
 
-# Create the Button widget and set the image
-button = tk.Button(parent, image=image)
-button.pack(padx=20, pady=20)
-
-# Keep a reference to the image
-# to prevent garbage collection
-button.image = image
-
-# Run the application
-parent.mainloop()
+root.mainloop()
