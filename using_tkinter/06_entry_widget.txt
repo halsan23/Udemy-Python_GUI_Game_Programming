@@ -1,0 +1,151 @@
+Python Tkinter - Entry Widget
+https://www.geeksforgeeks.org/python/python-tkinter-entry-widget/
+
+--------------------------------------------------------------------------
+
+The Entry Widget is a Tkinter Widget used to Enter or display a single line of text.
+
+
+Syntax:
+
+    entry = tk.Entry(parent, options)
+
+--------------------------------------------------------------------------
+
+Parameters:
+
+    1) Parent: The Parent window or frame in which the widget to display.
+    2) Options: The various options provided by the entry widget are:
+
+        - width: sets a maximum number of characters allowed for the input.
+        - fg: The color used to render the text.
+        - bg: The normal background color displayed behind the label and indicator.
+        - font: The font used for the text.
+        - justify: If the text contains multiple lines, this option controls how the text is justified: CENTER, LEFT, or RIGHT.
+        - bd: The size of the border around the indicator. Default is 2 pixels.
+        - relief : With the default value, relief=FLAT. You may set this option to any of the other styles like : SUNKEN, RIGID, RAISED, GROOVE
+        - show: Normally, the characters that the user types appear in the entry. To make a .password. entry that echoes each character as an asterisk, set show="*".
+        - textvariable: In order to be able to retrieve the current text from your entry widget, you must set this option to an instance of the StringVar class.
+
+--------------------------------------------------------------------------
+
+Methods: The various methods provided by the entry widget are:
+
+    get() : Returns the entry's current text as a string.
+    delete() : Deletes characters from the widget
+
+
+    insert ( index: 0, 'name') : Inserts the string 'name' before the character at the given index.
+
+        insert example:
+            name_entry.insert(index #, "text")
+
+        ***Note: the text does not delete when you click on the entry field, you must delete this text manually
+
+--------------------------------------------------------------------------
+
+Entry config
+
+    Allows you to modify previous entry Parameters.
+
+Example:
+
+    # set base entry
+    entry = Entry(root, font=("calibre", 18, "normal"))
+
+    # modify font parameter
+    entry.config(font=("ariel", 16, "bold"))
+
+--------------------------------------------------------------------------
+
+Entry Widget State
+
+    The state of a Tkinter Entry widget controls its editability. There are three main states you can set:
+
+        - normal: The widget is editable, allowing users to enter and modify text.
+        - disabled: The widget is not editable. Users cannot change the text, and no cursor is shown.
+        - readonly: Users can select text but cannot modify it. The cursor is visible, but input is restricted.
+
+Usage of State Options
+    Setting the State: You can set the state when creating the Entry widget or modify it later using the state option.
+
+    State Examples:
+        entry = Entry(master, state='normal')   # Editable
+        entry.config(state='disabled')          # Not editable
+        entry.config(state='readonly')          # Selectable but not editable
+
+--------------------------------------------------------------------------
+
+Example:
+
+# Program to make a simple login screen
+
+    # Entry Widget Example Create a Login Form
+    # Initialization
+    # --------------------------------------------------------------------------------
+    root = tk.Tk()
+
+    # setting the windows size
+    root.geometry("600x400")
+
+    # declaring string variables for name and password
+    name_var = tk.StringVar()
+    pswd_var = tk.StringVar()
+    # --------------------------------------------------------------------------------
+
+
+    # defining a function that will get the name and password
+    # to output them on the screen
+    # --------------------------------------------------------------------------------
+    def submit():
+
+        name = name_var.get()
+        password = pswd_var.get()
+
+        print("The name is : " + name)
+        print("The password is : " + password)
+
+        name_var.set("")
+        pswd_var.set("")
+    # --------------------------------------------------------------------------------
+
+
+    # Input
+    # --------------------------------------------------------------------------------
+    # creating a label for the name using widget Label
+    name_label = tk.Label(root, text="Username", font=("calibre", 10, "bold"))
+
+    # creating a Inout Entry for name using widget Entry
+    name_entry = tk.Entry(root, textvariable=name_var, font=("calibre", 10, "normal"))
+
+    # creating a label for password
+    pswd_label = tk.Label(root, text="Password", font=("calibre", 10, "bold"))
+
+    # creating a entry for password
+    pswd_entry = tk.Entry(
+        root, textvariable=passw_var, font=("calibre", 10, "normal"), show="*"
+    )
+
+
+    # creating a Submit Button using the button
+    # widget that will call the submit function
+    sub_btn = tk.Button(root, text="Submit", command=submit)
+    # --------------------------------------------------------------------------------
+
+
+    # Placement
+    # placing the label and entry in the required#
+    # position using the grid method
+    # --------------------------------------------------------------------------------
+    name_label.grid(row=0, column=0, padx=15, pady=10)
+    name_entry.grid(row=0, column=, pady=10)
+
+    pswd_label.grid(row=1, column=0, padx=15, pady=10)
+    pswd_entry.grid(row=1, column=1, pady=10)
+
+    sub_btn.grid(row=2, column=1, pady=15)
+    # --------------------------------------------------------------------------------
+
+
+    # run the app
+    root.mainloop()
