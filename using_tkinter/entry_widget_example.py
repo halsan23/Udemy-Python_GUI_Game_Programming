@@ -101,7 +101,7 @@ sub_btn = Button(root, text="Submit", font=("calibre", 13, "bold"), command=subm
 
 
 # Placing the label and entry in the required position using the grid method
-# could also us place() with less control on where items are placed
+# You could also us place() with less control on where items are placed
 # --------------------------------------------------------------------------------
 name_label.grid(row=0, column=0, padx=15, pady=10)
 name_entry.grid(row=0, column=1, pady=10)
